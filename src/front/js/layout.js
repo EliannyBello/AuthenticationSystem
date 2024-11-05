@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import Signup from "../components/Auth/Signup";
+import Register from "./pages/register.js";
 import Login from "../js/pages/login.js"
-import Private from "../components/Auth/Private";
+import Private from "./pages/private.js";
+import Home from "./pages/home.js";
 
 function AppRouter() {
     const isAuthenticated = !!sessionStorage.getItem("token");
@@ -10,8 +11,9 @@ function AppRouter() {
         <Router>
             <Navbar />
             <Routes>
-                <Route path="/signup" element={<Signup />} />
+                <Route path="/signup" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/home" element={<Home/>} />
                 <Route path="/private" element={isAuthenticated ? <Private /> : <Navigate to="/login" />} />
             </Routes>
         </Router>

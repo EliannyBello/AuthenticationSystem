@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 
-export const Home = () => {
+const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -24,3 +24,5 @@ export const Home = () => {
 		</div>
 	);
 };
+
+export default Home;
