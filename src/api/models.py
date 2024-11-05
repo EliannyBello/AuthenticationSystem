@@ -18,6 +18,18 @@ class User(db.Model):
             "is_active": self.is_active,
             "profile": self.profile.serialize() if self.profile else None
         }
+    
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
 
 class Profile(db.Model):
     __tablename__ = 'profiles'
@@ -31,3 +43,13 @@ class Profile(db.Model):
             "biography": self.biography
         }
 
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
