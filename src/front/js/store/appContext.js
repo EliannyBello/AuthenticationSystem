@@ -1,5 +1,9 @@
 import React, { createContext, useState, useEffect } from "react";
+
+
 export const Context = createContext(null)
+
+
 export const AppContext = ({ children }) => {
     const [store, setStore] = useState({
         apiUrl: 'http://127.0.0.1:5000',

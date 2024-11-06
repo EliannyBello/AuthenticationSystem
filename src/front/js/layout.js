@@ -4,10 +4,11 @@ import Login from "../js/pages/login.js"
 import Private from "./pages/private.js";
 import Home from "./pages/home.js";
 
-function AppRouter() {
+function Layout() {
     const isAuthenticated = !!sessionStorage.getItem("token");
 
     return (
+
         <Router>
             <Navbar />
             <Routes>
@@ -20,4 +21,4 @@ function AppRouter() {
     );
 }
 
-export default AppRouter;
+export default Layout;

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Private = () => {
     const navigate = useNavigate();
+    const { store, actions } = useContext(Context)
 
     useEffect(() => {
         const token = sessionStorage.getItem("token");
